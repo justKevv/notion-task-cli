@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -41,10 +42,14 @@ func (c *Client) CreateTask(task Task) error {
 		}
 	}
 	if task.Priority != "" {
+		priority := strings.ToLower(task.Priority)
+		if len(priority) > 0 {
+			priority = strings.ToUpper(priority[:1]) + priority[1:]
+		}
 		properties["Priority"] = map[string]interface{}{
 			"type": "select",
 			"select": map[string]interface{}{
-				"name": task.Priority,
+				"name": priority,
 			},
 		}
 	}
