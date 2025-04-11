@@ -11,6 +11,7 @@ import (
 type Client struct {
 	apiKey    string
 	baseURL   string
+	databaseID string
 	httpClient *http.Client
 }
 
@@ -23,6 +24,7 @@ func NewClient() (*Client, error) {
 	return &Client{
 		apiKey: cfg.NotionToken,
 		baseURL: "https://api.notion.com/v1",
+		databaseID: cfg.NotionDatabaseID,
 		httpClient: &http.Client{
 			Timeout: 30 * time.Second,
 		},
