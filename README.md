@@ -15,13 +15,14 @@ Notion Task CLI provides a simple, conversational way to add tasks to your desig
 *   **Simple Syntax:** Use keywords like `due`, `priority`, and `status`.
 *   **Natural Language Date Parsing:** Understands terms like `today`, `tomorrow`, `next monday`, `YYYY-MM-DD`, etc.
 *   **Configurable:** Connects to your specific Notion database via an integration token.
+*   **Flow Launcher Integration:** Can be integrated with Flow Launcher for quick task addition from anywhere.
 
 ## Installation
 
 1.  **Prerequisites:** Ensure you have [Go](https://go.dev/doc/install) (version 1.x or later) installed.
 2.  **Clone:** Clone this repository:
     ```bash
-    git clone https://github.com/justKevv/notion-task-cli.git 
+    git clone https://github.com/justKevv/notion-task-cli.git
     cd notion-task-cli
     ```
 3.  **Build:** Build the executable:
