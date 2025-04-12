@@ -35,7 +35,7 @@ func StartChatMode(notionClient *notion.Client)  {
 		}
 
 		if strings.HasPrefix(strings.ToLower(input), "add ") {
-			task, err := parseTaskInput(input)
+			task, err := ParseTaskInput(input)
 			if err != nil {
 				fmt.Println("Error parsing task:", err)
 				continue
@@ -58,7 +58,7 @@ func StartChatMode(notionClient *notion.Client)  {
 	}
 }
 
-func parseTaskInput(input string) (notion.Task, error) {
+func ParseTaskInput(input string) (notion.Task, error) {
 	// TODO: Implement parsing logic here
 	// - Extract task name
 	// - Look for keywords like "due", "priority", "status"
