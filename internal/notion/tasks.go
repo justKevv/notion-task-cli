@@ -28,7 +28,7 @@ func (c *Client) CreateTask(task Task) error {
 			{
 				"type": "text",
 				"text": map[string]interface{}{
-					"content": task.Name,
+					"content": titleCase(task.Name),
 				},
 			},
 		},
@@ -94,4 +94,14 @@ func (c *Client) CreateTask(task Task) error {
 	}
 
 	return nil
+}
+
+func titleCase(s string) string  {
+	words := strings.Fields(s)
+	for i, word := range words {
+		if len(word) > 0 {
+			words[i] = strings.ToUpper(word[:1]) + strings.ToLower(word[1:])
+		}
+	}
+	return strings.Join(words, " ")
 }
